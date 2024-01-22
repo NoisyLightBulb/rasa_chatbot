@@ -16,7 +16,9 @@ def webhook():
 
         # Send user message to Rasa and get bot's response
         rasa_response = requests.post(RASA_API_URL, json={"message": user_message})
-        rasa_response.raise_for_status()  # Raise an HTTPError for bad responses
+
+        # Raise an HTTPError for bad responses
+        rasa_response.raise_for_status()
 
         rasa_response_json = rasa_response.json()
 
