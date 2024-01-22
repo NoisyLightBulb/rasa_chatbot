@@ -41,7 +41,7 @@ class OrderFoodAction(Action):
 class ConfirmOrderAction(Action):
 
     def name(self) -> Text:
-        return "action_confirm"
+        return "action_confirm_order"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
