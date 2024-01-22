@@ -11,3 +11,10 @@ stories:
   steps:
   - intent: thank
   - action: utter_thank
+
+- story: order a pizza
+  steps:
+  - intent: order_food
+  - action: action_order_food
+  - intent: inform_food
+  - action: action_confirm_order

@@ -4,6 +4,12 @@ intents:
   - greet
   - goodbye
   - thank
+  - order_pizza
+  - order_food
+  - inform_food
+
+entities:
+  - food
 
 responses:
   utter_greet:
@@ -14,6 +20,14 @@ responses:
 
   utter_thank:
   - text: "You are welcome."
+
+  utter_order:
+  - text: "What kind of pizza do you want to order?"
+
+actions:
+  - action_extract_food_entity
+  - action_order_food
+  - action_confirm_food
 
 session_config:
   session_expiration_time: 60

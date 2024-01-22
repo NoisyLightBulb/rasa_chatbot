@@ -45,3 +45,18 @@ nlu:
     - Let's order a [pizza](food)
     - Get me a [pizza](food)
     - How about a [pizza](food)
+
+- intent: order_food
+  examples: |
+    - I want to order food
+    - Can I get some food
+    - I'd like to have some food
+    - Let's order food
+
+- intent: inform_food
+  examples: |
+    - [steak](food)
+    - [burger](food)
+    - [sushi](food)
+    - [salad](food)
+    - [pasta](food)
