@@ -69,8 +69,9 @@
                 success: function(data) {
                   let botResponse = data.response;
 
-                  // Append bot's response to the chatbox
-                  $("#chat-widget-messages").append("<div><strong>Bot:</strong> " + botResponse + "</div>");
+                  // Sanitize and append bot's response to the chatbox
+                  $("#chat-widget-messages").append("<div><strong>Bot:</strong> " + $.text(botResponse) + "</div>");
+
                 },
                 error: function() {
                   // Handle error if needed
