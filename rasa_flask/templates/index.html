@@ -39,32 +39,46 @@
             <input type="text" class="form-control" id="chat-widget-input" placeholder="Type your message here...">
           </div>
 
-      </div>
+        </div>
       </div>
 
       <script>
         $(document).ready(function() {
           $("#chat-widget-button").on("click", function() {
-            $("#chat-widget").toggleClass("d-none")
+            $("#chat-widget").toggleClass("d-none");
           });
 
           $("#chat-widget-close-button").on("click", function() {
-            $("#chat-widget").addClass("d-none")
+            $("#chat-widget").addClass("d-none");
           });
 
           $("#chat-widget-input").keypress(function(event) {
             if(event.which == 13) {
               let userMessage = $("#chat-widget-input").val();
-              $("#chat-widget-input").val("")
+              $("#chat-widget-input").val("");
 
-            //Append user message to chatbox
-            $("#chat-widget-messages").append("<div><strong>You:</strong> " + userMessage + "</div>");
+              // Append user message to chatbox
+              $("#chat-widget-messages").append("<div><strong>You:</strong> " + userMessage + "</div>");
+
+              // Send user message to the server and get bot's response
+              $.ajax({
+                type: "POST",
+                url: "/webhook",
+                contentType: "application/json",
+                data: JSON.stringify({message: userMessage}),
+                success: function(data) {
+                  let botResponse = data.response;
+
+                  // Append bot's response to the chatbox
+                  $("#chat-widget-messages").append("<div><strong>Bot:</strong> " + botResponse + "</div>");
+                },
+                error: function() {
+                  // Handle error if needed
+                }
+              });
             }
-
           });
         });
       </script>
-
-
   </body>
 </html>
