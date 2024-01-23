@@ -30,7 +30,7 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
+- intent: confirm
   examples: |
     - yes
     - y
@@ -39,7 +39,7 @@ nlu:
     - that sounds good
     - correct
 
-- intent: deny
+- intent: reject
   examples: |
     - no
     - n
@@ -49,39 +49,25 @@ nlu:
     - no way
     - not really
 
-- intent: mood_great
+- intent: book
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - I would like to book a table
+    - I would like to make a reservation
+    - Booking
+    - Reservation
+    - I want to reserve a table
 
-- intent: mood_unhappy
+- intent: set_date
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - on [Monday](date)
+
+
+- intent: set_time
+- intent: set_people
+
+
+
+
 
 - intent: bot_challenge
   examples: |
